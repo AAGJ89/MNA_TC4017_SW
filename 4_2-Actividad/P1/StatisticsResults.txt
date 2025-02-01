@@ -1,5 +1,5 @@
-Mean: 344.94
-Median: 393.00
-Mode: 487.0
-Variance: 21120.88
-Standard Deviation: 145.33
+Mean: 241.91 
+Median: 239.00 
+Mode: 393.0 
+Variance: 21086.31 
+Standard Deviation: 145.21
