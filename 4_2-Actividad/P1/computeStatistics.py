@@ -1,3 +1,7 @@
+# Arturo Alfonso Gallardo Jasso
+# A01795510
+# computerStatistics.py Rev1.0
+
 import sys
 import time
 
