@@ -31,10 +31,9 @@ for line in lines:
         invalid_data.append(line.strip())
 
 if not item_list:
-    print("Error 3! No data")
+    print("Error 3! No data in the file")
     sys.exit(1)
 
-# Mostrar datos inválidos en una sola línea
 if invalid_data:
     print(f"Error 4! Invalid data: {', '.join(invalid_data)}")
 
