@@ -11,6 +11,7 @@ except IndexError:
 
 time_tracking = time.time()
 item_list = []
+invalid_data = []
 
 # Using Try-Except to find the file
 try:
@@ -26,7 +27,16 @@ for line in lines:
         num = float(line.strip())
         item_list.append(num)
     except ValueError:
-        print(f"Error 3! Invalid data: {line.strip()}")
+        # print(f"Error 3! Invalid data: {line.strip()}")
+        invalid_data.append(line.strip())
+
+if not item_list:
+    print("Error 3! No data")
+    sys.exit(1)
+
+# Mostrar datos inválidos en una sola línea
+if invalid_data:
+    print(f"Error 4! Invalid data: {', '.join(invalid_data)}")
 
 # Computation. Descriptive statistics: Mean, Median, Mode, Standard Deviation, and Variance
 item_qty = len(item_list)
