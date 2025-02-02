@@ -81,8 +81,6 @@ for num, binary_conversion, hexadecimal_conversion in zip(item_list, binary, hex
         f"{hexadecimal_conversion:<{max_hex_width}}   "
     )
     print(line)
-elapsed_time = time.time()-time_tracking
-
 
 results = header +"\n"
 for num, binary_conversion, hexadecimal_conversion in zip(item_list, binary, hexadecimal):
@@ -95,6 +93,8 @@ for num, binary_conversion, hexadecimal_conversion in zip(item_list, binary, hex
     results += line +"\n"
 
 #Time
+elapsed_time = time.time()-time_tracking
+
 elapsed_time_string = f"Time elapsed on execution of this program: {elapsed_time:.4f} seconds"
 results += elapsed_time_string
 print (elapsed_time_string)

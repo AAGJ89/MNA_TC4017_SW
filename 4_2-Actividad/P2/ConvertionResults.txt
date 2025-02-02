@@ -37,4 +37,4 @@ NUMBER  BIN            HEX
 -50     1111001110     FFFFFFFFCE     
 0       0              0              
 -6      1111111010     FFFFFFFFFA     
-Time elapsed on execution of this program: 0.0020 seconds
+Time elapsed on execution of this program: 0.0077 seconds
