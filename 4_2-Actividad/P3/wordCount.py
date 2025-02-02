@@ -2,12 +2,13 @@
 Problem 3. Count Words
 Arturo Alfonso Gallardo Jasso
 A01795510
-wordCount.py Rev1.0
+wordCount.py Rev1.1
 """
 # pylint: disable=invalid-name
 
 # Libraries
-import sys, time
+import sys
+import time
 
 # Using Argument Vector with Try-Except to verify if the file provided is an argument
 try:
@@ -58,7 +59,7 @@ n = len(word_counter_list)
 for i in range(n):
     for j in range(0, n-i-1):
         if word_counter_list[j][1]<word_counter_list[j+1][1]:
-         word_counter_list[j], word_counter_list[j+1] = word_counter_list[j+1], word_counter_list[j]
+            word_counter_list[j],word_counter_list[j+1]=word_counter_list[j+1],word_counter_list[j]
 
 # Calculating length of the columns
 max_word_width = max(len(word) for word, count in word_counter_list)
