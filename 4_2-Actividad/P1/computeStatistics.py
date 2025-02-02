@@ -33,7 +33,7 @@ except FileNotFoundError:
 # Handling invalid data in the file
 for line in all_lines:
     try:
-        num = int(line.strip())
+        num = float(line.strip())
         item_list.append(num)
     except ValueError:
         # print(f"Error 3! Invalid data: {line.strip()}")
@@ -88,11 +88,11 @@ print (results)
 
 # Time
 elapsed_time = time.time() - time_tracking
+
 results += f"\nElapsed Time: {elapsed_time:.4f} seconds"
+print(f"Time elapsed: {elapsed_time:.4f} seconds")
 
 with open("StatisticsResults.txt", "w", encoding='utf-8') as file:
     file.write(results)
 
 print("\nThese results are stored in StatisticsResults.txt under P1 folder")
-
-print(f"Time elapsed on execution of this program: {elapsed_time:.4f} seconds")
