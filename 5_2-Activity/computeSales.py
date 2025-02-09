@@ -2,7 +2,7 @@
 Problem 2. Converter
 Arturo Alfonso Gallardo Jasso
 A01795510
-computeSales.py Rev1.0
+computeSales.py Rev1.1
 """
 # pylint: disable=invalid-name
 
@@ -19,17 +19,17 @@ try:
     price_filename = sys.argv[1]
     sales_filename = sys.argv[2]
 except IndexError:
-    print("Error 1! Format to invoke the program is: python computeSales.py priceCatalogue.json TCX.salesRecord.json")
+    print("Error 1! Format to invoke the program is:\n"
+          "python computeSales.py priceCatalogue.json TCX.salesRecord.json")
     sys.exit(1)
 
 # Define paths
 price_filename = Path(price_filename)  # Price catalogue is in the main directory
 sales_directory = Path(sales_filename.split('.')[0])  # Extract TCX from TCX.salesRecord.json
-#print("Buscando archivo:", sales_directory)
 sales_file_path = sales_directory / sales_filename
 
 time_tracking = time.time()
-#item_list = []
+item_list = []
 invalid_data = []
 
 # Using Try-Except to find the file
@@ -43,8 +43,12 @@ except json.JSONDecodeError:
     print(f"Error 3! Invalid JSON format in file: {price_filename}")
     sys.exit(1)
 
-# Convert price list to dictionary {title: price}
-price_data = {item["title"]: item["price"] for item in price_list if "title" in item and "price" in item}
+# Conversion for price list to dictionary
+price_data = {
+    item["title"]: item["price"]
+    for item in price_list
+    if "title" in item and "price" in item
+}
 
 # Verify sales record file exists
 try:
@@ -58,6 +62,7 @@ except json.JSONDecodeError:
     sys.exit(1)
 
 # Compute total cost
+#total_cost = sum(price_data[sale["Product"]] * int(sale["Quantity"]) for sale in sales_data)
 total_cost = 0
 for sale in sales_data:
     try:
