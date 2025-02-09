@@ -14,7 +14,7 @@ from pathlib import Path
 
 print("Program info: computeSales Rev1.0")
 
-# Using Argument Vector with Try-Except to verify if the file provided is an argument
+# Argument Vector with Try-Except to verify if the file provided is an argument
 try:
     price_filename = sys.argv[1]
     sales_filename = sys.argv[2]
@@ -24,8 +24,8 @@ except IndexError:
     sys.exit(1)
 
 # Define paths
-price_filename = Path(price_filename)  # Price catalogue is in the main directory
-sales_directory = Path(sales_filename.split('.')[0])  # Extract TCX from TCX.salesRecord.json
+price_filename = Path(price_filename)
+sales_directory = Path(sales_filename.split('.')[0])
 sales_file_path = sales_directory / sales_filename
 
 time_tracking = time.time()
@@ -62,7 +62,7 @@ except json.JSONDecodeError:
     sys.exit(1)
 
 # Compute total cost
-#total_cost = sum(price_data[sale["Product"]] * int(sale["Quantity"]) for sale in sales_data)
+
 total_cost = 0
 for sale in sales_data:
     try:
@@ -71,15 +71,15 @@ for sale in sales_data:
         if product in price_data:
             total_cost += price_data[product] * quantity
         else:
-            print(f"Error 4! Product '{product}' not found in price catalogue.")
+            print(f"Error 4! Product '{product}'not found in catalogue.")
             invalid_data.append(product)
     except (KeyError, ValueError):
         print(f"Error 5! Invalid data: {sale}")
         invalid_data.append(str(sale))
 
 # Formatting results
-results = f"Directory: {sales_directory}\nTotal Sales Cost: ${total_cost:.2f}\n"
-results += f"Time elapsed: {time.time() - time_tracking:.4f} seconds\n"
+results = f"Directory: {sales_directory}\nTotal Sales Cost: ${total_cost:.2f}"
+results += f"\nTime elapsed: {time.time() - time_tracking:.4f} seconds\n"
 
 print(results)
 
