@@ -1,0 +1,3 @@
+Directory: TC3
+Total Sales Cost: $165235.37
+Time elapsed: 0.0000 seconds

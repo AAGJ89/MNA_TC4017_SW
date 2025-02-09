@@ -12,17 +12,21 @@ import time
 import json
 from pathlib import Path
 
+print("Program info: computeSales Rev1.0")
+
 # Using Argument Vector with Try-Except to verify if the file provided is an argument
 try:
     price_filename = sys.argv[1]
     sales_filename = sys.argv[2]
 except IndexError:
-    print("Error 1! Format to invoke the program is: python computeSales.py priceCatalogue.json salesRecord.json")
+    print("Error 1! Format to invoke the program is: python computeSales.py priceCatalogue.json TCX.salesRecord.json")
     sys.exit(1)
 
 # Define paths
 price_filename = Path(price_filename)  # Price catalogue is in the main directory
-sales_directories = ["TC1", "TC2", "TC3"]
+sales_directory = Path(sales_filename.split('.')[0])  # Extract TCX from TCX.salesRecord.json
+#print("Buscando archivo:", sales_directory)
+sales_file_path = sales_directory / sales_filename
 
 time_tracking = time.time()
 #item_list = []
@@ -38,3 +42,44 @@ except FileNotFoundError:
 except json.JSONDecodeError:
     print(f"Error 3! Invalid JSON format in file: {price_filename}")
     sys.exit(1)
+
+# Convert price list to dictionary {title: price}
+price_data = {item["title"]: item["price"] for item in price_list if "title" in item and "price" in item}
+
+# Verify sales record file exists
+try:
+    with sales_file_path.open('r', encoding='utf-8') as file:
+        sales_data = json.load(file)
+except FileNotFoundError:
+    print(f"Error 2! File not found: {sales_file_path}")
+    sys.exit(1)
+except json.JSONDecodeError:
+    print(f"Error 3! Invalid JSON format in file: {sales_file_path}")
+    sys.exit(1)
+
+# Compute total cost
+total_cost = 0
+for sale in sales_data:
+    try:
+        product = sale["Product"]
+        quantity = int(sale["Quantity"])
+        if product in price_data:
+            total_cost += price_data[product] * quantity
+        else:
+            print(f"Error 4! Product '{product}' not found in price catalogue.")
+            invalid_data.append(product)
+    except (KeyError, ValueError):
+        print(f"Error 5! Invalid data: {sale}")
+        invalid_data.append(str(sale))
+
+# Formatting results
+results = f"Directory: {sales_directory}\nTotal Sales Cost: ${total_cost:.2f}\n"
+results += f"Time elapsed: {time.time() - time_tracking:.4f} seconds\n"
+
+print(results)
+
+# Save results to file
+with Path("SalesResults.txt").open("w", encoding='utf-8') as file:
+    file.write(results)
+
+print("Results saved in SalesResults.txt")
