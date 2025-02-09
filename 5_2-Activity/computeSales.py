@@ -1,8 +1,8 @@
 """
-Problem 2. Converter
+Programming exercises 
 Arturo Alfonso Gallardo Jasso
 A01795510
-computeSales.py Rev1.1
+computeSales.py Rev1.2
 """
 # pylint: disable=invalid-name
 
