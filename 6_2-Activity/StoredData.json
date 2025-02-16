@@ -1,0 +1,128 @@
+{
+    "hotels": [
+        {
+            "id": "01",
+            "name": "Courtyard McAllen Airport",
+            "description": "The hotel is conveniently located only 2 blocks away from the McAllen Airport and directly across the street from La Plaza Mall. With a wide variety of restaurants nearby your dining options are endless.",
+            "location": "2131 South 10th St., McAllen, Texas, USA, 78503",
+            "telephone": "+1 956-668-7800",
+            "amenities": "Free high-speed internet, Meeting event space, Pool, Parking, Airport Shuttle",
+            "pet_allowance": "No",
+            "rate": "$125",
+            "status": "Active",
+            "created_at": "2025-02-16 10:24:17",
+            "updated_at": "2025-02-16 15:50:48"
+        },
+        {
+            "id": "02",
+            "name": "Fairfield Inn & Suites McAllen Airport",
+            "description": "Conveniently located 5 minutes from Mcallen International Airport and across the street from a major mall. Also within 15 minutes of the Hidalgo International Bridge into Reynosa, Mexico. Within walking distance of a variety of restaurants.",
+            "location": "2117 South 10th Street, McAllen, Texas, USA, 78503",
+            "telephone": "+1 956-971-9444",
+            "amenities": "Free high-speed internet, Free breakfast, Pool, Fitness center, Parking, Airport Shuttle",
+            "pet_allowance": "No",
+            "rate": "$117",
+            "status": "Active",
+            "created_at": "2025-02-16 11:26:22",
+            "updated_at": "2025-02-16 11:26:22"
+        },
+        {
+            "id": "03",
+            "name": "Aloft McAllen",
+            "description": "Our hotel is in prime location within walking distance to the McAllen Convention Center, making it ideal for business travelers attending conferences and events. Situated in the Palms Crossing Shopping District.",
+            "location": "501 South Ware RoadMcallen, Texas, USA, 78501",
+            "telephone": "+1 956-694-1700",
+            "amenities": "Free high-speed internet, Meeting event space, Pool, Parking, Fitness center, Airport shuttle",
+            "pet_allowance": "Yes",
+            "rate": "$107",
+            "status": "Active",
+            "created_at": "2025-02-16 15:29:59",
+            "updated_at": "2025-02-16 15:29:59"
+        },
+        {
+            "id": "04",
+            "name": "Courtyard Hickory",
+            "description": "Located off Interstate 40 at exit 125. Turn left onto 13th Ave Dr SE at Outback Steakhouse. Hotel on right behind Carrabba's.",
+            "location": "1946 13th Avenue Drive SEHickory, North Carolina, USA, 28602",
+            "telephone": "+1 828-267-2100",
+            "amenities": "Free high-speed internet, Meeting event space, Pool, Parking, Fitness center, Barber, Beauty shop",
+            "pet_allowance": "No",
+            "rate": "$175",
+            "status": "Active",
+            "created_at": "2025-02-16 15:33:25",
+            "updated_at": "2025-02-16 15:33:25"
+        },
+        {
+            "id": "05",
+            "name": "Fairfield Inn & Suites Hickory",
+            "description": "Off of I-40 exit 125 behind Carraba's restaurant",
+            "location": "1950 13th Avenue Drive SEHickory, North Carolina, USA, 28602",
+            "telephone": "+1 828-431-3000",
+            "amenities": "Free high-speed internet, Free breakfast, Pool, Parking, Fitness center",
+            "pet_allowance": "No",
+            "rate": "$166",
+            "status": "Active",
+            "created_at": "2025-02-16 15:35:29",
+            "updated_at": "2025-02-16 15:35:29"
+        }
+    ],
+    "customers": [
+        {
+            "id": "01",
+            "name": "Arturo Alfonso Gallardo Jasso",
+            "country": "Mexican",
+            "age": "35",
+            "gender": "Male",
+            "document": "Passport",
+            "status": "Active",
+            "created_at": "2025-02-16 16:25:48",
+            "updated_at": "2025-02-16 16:25:48"
+        },
+        {
+            "id": "02",
+            "name": "Albert Einstein",
+            "country": "German",
+            "age": "76",
+            "gender": "Male",
+            "document": "Passport",
+            "status": "Deleted",
+            "created_at": "2025-02-16 16:26:56",
+            "updated_at": "2025-02-16 16:27:02"
+        },
+        {
+            "id": "03",
+            "name": "Federico Toledo Rodriguez",
+            "country": "Uruguay",
+            "age": "42",
+            "gender": "Male",
+            "document": "Passport",
+            "status": "Active",
+            "created_at": "2025-02-16 16:32:34",
+            "updated_at": "2025-02-16 16:33:36"
+        }
+    ],
+    "reservations": [
+        {
+            "hotel_id": "02",
+            "customer_name": "Arturo Alfonso Gallardo Jasso",
+            "num_people": 1,
+            "check_in": "2025-02-16",
+            "check_out": "2025-02-17",
+            "total_price": 140.4,
+            "status": "Confirmed",
+            "created_at": "2025-02-16 17:18:35",
+            "updated_at": "2025-02-16 17:18:35"
+        },
+        {
+            "hotel_id": "03",
+            "customer_name": "Federico Toledo Rodriguez",
+            "num_people": 2,
+            "check_in": "2025-02-18",
+            "check_out": "2025-02-20",
+            "total_price": 299.59999999999997,
+            "status": "Cancelled",
+            "created_at": "2025-02-16 17:19:45",
+            "updated_at": "2025-02-16 17:20:24"
+        }
+    ]
+}
