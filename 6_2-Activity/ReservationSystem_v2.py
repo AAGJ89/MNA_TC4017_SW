@@ -1,3 +1,11 @@
+"""
+Programming exercises 
+Arturo Alfonso Gallardo Jasso
+A01795510
+ReservationSystem_v2.py
+"""
+# pylint: disable=invalid-name
+
 import json
 import os
 from datetime import datetime
