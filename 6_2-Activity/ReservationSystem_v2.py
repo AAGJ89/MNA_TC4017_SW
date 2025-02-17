@@ -4,7 +4,7 @@ Arturo Alfonso Gallardo Jasso
 A01795510
 ReservationSystem_v2.py
 """
-# pylint: disable=invalid-name, too-many-arguments, disable=too-many-positional-arguments
+# pylint: disable=invalid-name,too-many-arguments,too-many-positional-arguments
 
 import json
 import os

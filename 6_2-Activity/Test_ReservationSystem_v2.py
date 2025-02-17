@@ -22,7 +22,8 @@ class TestReservationSystem(unittest.TestCase):
     def test_create_hotel(self):
         """Test creating a hotel"""
         self.system.create_hotel(
-            hotel_id="10", name="Test Hotel", description="Test hotel for unit test",
+            hotel_id="10", name="Test Hotel",
+            description="Test hotel for unit test",
             location="Test Location", telephone="123-456-7890",
             amenities="WiFi, Pool", pet_allowance="Yes", rate="150"
         )
