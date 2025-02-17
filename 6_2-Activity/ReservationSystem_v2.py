@@ -1,15 +1,15 @@
 """
-Programming exercises 
+Programming exercises
 Arturo Alfonso Gallardo Jasso
 A01795510
 ReservationSystem_v2.py
 """
-# pylint: disable=invalid-name
-# pylint: disable=too-many-positional-arguments
+# pylint: disable=invalid-name, too-many-arguments, disable=too-many-positional-arguments
 
 import json
 import os
 from datetime import datetime
+
 
 class ReservationSystem:
     """Main code for ReservationSystem"""
@@ -18,13 +18,15 @@ class ReservationSystem:
         self.data = self.load_data()
 
     def load_data(self):
-        """Load data from StoredData or create new file if empty or corrupted"""
-        if os.path.exists(self.data_file) and os.path.getsize(self.data_file) > 0:
+        """Load data from StoredData or create new file if empty or corrupt"""
+        file_exists = os.path.exists(self.data_file)
+        file_not_empty = os.path.getsize(self.data_file) > 0
+        if file_exists and file_not_empty:
             with open(self.data_file, "r", encoding="utf-8") as file:
                 try:
                     return json.load(file)
                 except json.JSONDecodeError:
-                    print("Corrupted JSON file detected. Initializing with empty data.")
+                    print("Corrupted JSON file detected. Starting empty file.")
         return {"hotels": [], "customers": [], "reservations": []}
 
     def save_data(self):
@@ -38,9 +40,11 @@ class ReservationSystem:
         """Create new hotel and save in StoredData"""
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.data["hotels"].append({
-             "id": hotel_id, "name": name, "description": description, "location": location,
-             "telephone": telephone, "amenities": amenities, "pet_allowance": pet_allowance,
-             "rate": rate, "status": "Active", "created_at": timestamp, "updated_at": timestamp
+             "id": hotel_id, "name": name, "description": description,
+             "location": location, "telephone": telephone,
+             "amenities": amenities, "pet_allowance": pet_allowance,
+             "rate": rate, "status": "Active", "created_at": timestamp,
+             "updated_at": timestamp
         })
         self.save_data()
 
@@ -49,7 +53,8 @@ class ReservationSystem:
         for hotel in self.data["hotels"]:
             if hotel["id"] == hotel_id:
                 hotel["status"] = "Deleted"
-                hotel["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                hotel["updated_at"] = current_time
                 self.save_data()
                 return True
         return False
@@ -57,24 +62,26 @@ class ReservationSystem:
     def display_hotels(self):
         """Display all high level information from StoredData"""
         for hotel in self.data["hotels"]:
-            print(f"{hotel['id']:<10}{hotel['name']:<50}{hotel['status']:<10}{hotel['updated_at']}")
+            print(f"{hotel['id']:<10}{hotel['name']:<50}"
+                  f"{hotel['status']:<10}{hotel['updated_at']}")
 
     def display_hotel_details(self, hotel_id):
         """Display the detailed information from StoredData"""
-        selected_hotel = next((hotel for hotel in self.data["hotels"]
-                               if hotel['id'] == hotel_id),
-                               None
+        selected_hotel = next(
+            (hotel for hotel in self.data["hotels"]
+             if hotel['id'] == hotel_id),
+            None
         )
         if selected_hotel:
             print("\nHotel Details:")
             print(f"ID: {selected_hotel['id']}")
             print(f"Name: {selected_hotel['name']}")
-            print(f"Description: {selected_hotel.get('description', 'No description available')}")
-            print(f"Rate per night: {selected_hotel.get('rate', 'Not specified')}")
-            print(f"Location: {selected_hotel.get('location', 'Not specified')}")
-            print(f"Telephone: {selected_hotel.get('telephone', 'Not specified')}")
-            print(f"Amenities: {selected_hotel.get('amenities', 'Not specified')}")
-            print(f"Pet Allowance: {selected_hotel.get('pet_allowance', 'Not specified')}")
+            print(f"Description: {selected_hotel.get('description', 'No d')}")
+            print(f"Rate per night: {selected_hotel.get('rate', 'Not speci')}")
+            print(f"Location: {selected_hotel.get('location', 'Not specif')}")
+            print(f"Telephone: {selected_hotel.get('telephone', 'Not speci')}")
+            print(f"Amenities: {selected_hotel.get('amenities', 'Not speci')}")
+            print(f"Pet Allowance: {selected_hotel.get('pet_allowance', 'N')}")
             print(f"Status: {selected_hotel['status']}")
             print(f"Created: {selected_hotel['created_at']}")
             print(f"Updated: {selected_hotel['updated_at']}")
@@ -83,20 +90,23 @@ class ReservationSystem:
 
     def modify_hotel(self, hotel_id, field, new_value):
         """Modify a specific hotel"""
-        selected_hotel = next((hotel for hotel in self.data["hotels"]
-                               if hotel['id'] == hotel_id),
-                               None
+        selected_hotel = next(
+            (hotel for hotel in self.data["hotels"]
+             if hotel['id'] == hotel_id),
+            None
         )
         if selected_hotel:
             selected_hotel[field] = new_value
-            selected_hotel["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            selected_hotel["updated_at"] = datetime.now().strftime(
+                "%Y-%m-%d %H:%M:%S")
             self.save_data()
             return True
         return False
 
+# Customer Management
 
-    # Customer Management
-    def create_customer(self, customer_id, name, country, age, gender, document):
+    def create_customer(self, customer_id, name,
+                        country, age, gender, document):
         """Create customer"""
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.data["customers"].append({
@@ -112,7 +122,8 @@ class ReservationSystem:
         for customer in self.data["customers"]:
             if customer["id"] == customer_id:
                 customer["status"] = "Deleted"
-                customer["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                customer["updated_at"] = datetime.now().strftime(
+                    "%Y-%m-%d %H:%M:%S")
                 self.save_data()
                 return True
         return False
@@ -128,7 +139,7 @@ class ReservationSystem:
         selected_customer = next(
             (customer for customer in self.data["customers"]
              if customer['id'] == customer_id),
-             None
+            None
         )
         if selected_customer:
             print("\nCustomer Details:")
@@ -142,7 +153,7 @@ class ReservationSystem:
         selected_customer = next(
             (customer for customer in self.data["customers"]
              if customer['id'] == customer_id),
-             None
+            None
         )
         if selected_customer:
             selected_customer[field] = new_value
@@ -152,15 +163,18 @@ class ReservationSystem:
             return True
         return False
 
-    # Reservation Management
+# Reservation Management
+
     def create_reservation(self, hotel_id, customer_id, num_people,
                            check_in, check_out, total_price):
         """Create reservation"""
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.data["reservations"].append({
-            "hotel_id": hotel_id, "customer_id": customer_id, "num_people": num_people,
-            "check_in": check_in, "check_out": check_out, "total_price": total_price,
-            "status": "Confirmed", "created_at": timestamp, "updated_at": timestamp
+            "hotel_id": hotel_id, "customer_id": customer_id,
+            "num_people": num_people, "check_in": check_in,
+            "check_out": check_out, "total_price": total_price,
+            "status": "Confirmed", "created_at": timestamp,
+            "updated_at": timestamp
         })
         self.save_data()
 
@@ -168,12 +182,14 @@ class ReservationSystem:
         """Cancel reservation"""
         selected_reservation = next(
             (res for res in self.data["reservations"]
-             if res['hotel_id'] == hotel_id and res['customer_id'] == customer_id),
-             None
+             if res['hotel_id'] == hotel_id
+             and res['customer_id'] == customer_id),
+            None
         )
         if selected_reservation:
             selected_reservation["status"] = "Cancelled"
-            selected_reservation["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            selected_reservation["updated_at"] = datetime.now().strftime(
+                "%Y-%m-%d %H:%M:%S")
             self.save_data()
             return True
         return False
