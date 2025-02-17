@@ -3,7 +3,8 @@ import os
 from datetime import datetime
 
 # JSON file name
-DATA_FILE = "StoredData.json"
+#TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
+DATA_FILE = "StoredData.json" #if TEST_MODE else "StoredData.json"
 
 if os.path.exists(DATA_FILE) and os.path.getsize(DATA_FILE) > 0:
     with open(DATA_FILE, "r") as file:
