@@ -37,7 +37,7 @@
             "rate": "100",
             "status": "Deleted",
             "created_at": "2025-02-16 21:30:51",
-            "updated_at": "2025-02-16 22:53:44"
+            "updated_at": "2025-02-16 23:56:31"
         },
         {
             "id": "13",
@@ -50,7 +50,7 @@
             "rate": "350",
             "status": "Active",
             "created_at": "2025-02-16 21:30:51",
-            "updated_at": "2025-02-16 22:53:44"
+            "updated_at": "2025-02-16 23:56:31"
         },
         {
             "id": "10",
@@ -857,6 +857,123 @@
             "status": "Active",
             "created_at": "2025-02-16 22:53:44",
             "updated_at": "2025-02-16 22:53:44"
+        },
+        {
+            "id": "10",
+            "name": "Test Hotel",
+            "description": "Test hotel for unit test",
+            "location": "Test Location",
+            "telephone": "123-456-7890",
+            "amenities": "WiFi, Pool",
+            "pet_allowance": "Yes",
+            "rate": "150",
+            "status": "Active",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "id": "12",
+            "name": "Deletable Hotel",
+            "description": "To be deleted",
+            "location": "Delete Location",
+            "telephone": "000-000-0000",
+            "amenities": "None",
+            "pet_allowance": "Yes",
+            "rate": "100",
+            "status": "Active",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "id": "15",
+            "name": "Detailed Hotel",
+            "description": "Description test",
+            "location": "Detail Location",
+            "telephone": "555-123-4567",
+            "amenities": "Spa, WiFi",
+            "pet_allowance": "Yes",
+            "rate": "250",
+            "status": "Active",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "id": "11",
+            "name": "Another Hotel",
+            "description": "Another test desc",
+            "location": "Another Location",
+            "telephone": "123-456-0000",
+            "amenities": "WiFi, Gym",
+            "pet_allowance": "No",
+            "rate": "200",
+            "status": "Active",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "id": "13",
+            "name": "Modifiable Hotel",
+            "description": "To be modified",
+            "location": "Modify Location",
+            "telephone": "555-555-5555",
+            "amenities": "WiFi",
+            "pet_allowance": "No",
+            "rate": "300",
+            "status": "Active",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "id": "12",
+            "name": "Deletable Hotel",
+            "description": "To be deleted",
+            "location": "Delete Location",
+            "telephone": "000-000-0000",
+            "amenities": "None",
+            "pet_allowance": "Yes",
+            "rate": "100",
+            "status": "Active",
+            "created_at": "2025-02-16 23:56:31",
+            "updated_at": "2025-02-16 23:56:31"
+        },
+        {
+            "id": "15",
+            "name": "Detailed Hotel",
+            "description": "Description test",
+            "location": "Detail Location",
+            "telephone": "555-123-4567",
+            "amenities": "Spa, WiFi",
+            "pet_allowance": "Yes",
+            "rate": "250",
+            "status": "Active",
+            "created_at": "2025-02-16 23:56:31",
+            "updated_at": "2025-02-16 23:56:31"
+        },
+        {
+            "id": "11",
+            "name": "Another Hotel",
+            "description": "Another test desc",
+            "location": "Another Location",
+            "telephone": "123-456-0000",
+            "amenities": "WiFi, Gym",
+            "pet_allowance": "No",
+            "rate": "200",
+            "status": "Active",
+            "created_at": "2025-02-16 23:56:31",
+            "updated_at": "2025-02-16 23:56:31"
+        },
+        {
+            "id": "13",
+            "name": "Modifiable Hotel",
+            "description": "To be modified",
+            "location": "Modify Location",
+            "telephone": "555-555-5555",
+            "amenities": "WiFi",
+            "pet_allowance": "No",
+            "rate": "300",
+            "status": "Active",
+            "created_at": "2025-02-16 23:56:31",
+            "updated_at": "2025-02-16 23:56:31"
         }
     ],
     "customers": [
@@ -891,7 +1008,7 @@
             "document": "Driver License",
             "status": "Deleted",
             "created_at": "2025-02-16 21:30:51",
-            "updated_at": "2025-02-16 22:53:44"
+            "updated_at": "2025-02-16 23:56:31"
         },
         {
             "id": "23",
@@ -902,7 +1019,7 @@
             "document": "Passport",
             "status": "Active",
             "created_at": "2025-02-16 21:30:51",
-            "updated_at": "2025-02-16 22:53:44"
+            "updated_at": "2025-02-16 23:56:31"
         },
         {
             "id": "20",
@@ -1508,6 +1625,83 @@
             "status": "Active",
             "created_at": "2025-02-16 22:53:44",
             "updated_at": "2025-02-16 22:53:44"
+        },
+        {
+            "id": "20",
+            "name": "John Doe",
+            "country": "USA",
+            "age": "30",
+            "gender": "Male",
+            "document": "Passport",
+            "status": "Active",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "id": "22",
+            "name": "Mark Smith",
+            "country": "UK",
+            "age": "40",
+            "gender": "Male",
+            "document": "Driver License",
+            "status": "Active",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "id": "21",
+            "name": "Jane Doe",
+            "country": "Canada",
+            "age": "28",
+            "gender": "Female",
+            "document": "ID Card",
+            "status": "Active",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "id": "23",
+            "name": "Emily Johnson",
+            "country": "France",
+            "age": "32",
+            "gender": "Female",
+            "document": "Passport",
+            "status": "Active",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "id": "22",
+            "name": "Mark Smith",
+            "country": "UK",
+            "age": "40",
+            "gender": "Male",
+            "document": "Driver License",
+            "status": "Active",
+            "created_at": "2025-02-16 23:56:31",
+            "updated_at": "2025-02-16 23:56:31"
+        },
+        {
+            "id": "21",
+            "name": "Jane Doe",
+            "country": "Canada",
+            "age": "28",
+            "gender": "Female",
+            "document": "ID Card",
+            "status": "Active",
+            "created_at": "2025-02-16 23:56:31",
+            "updated_at": "2025-02-16 23:56:31"
+        },
+        {
+            "id": "23",
+            "name": "Emily Johnson",
+            "country": "France",
+            "age": "32",
+            "gender": "Female",
+            "document": "Passport",
+            "status": "Active",
+            "created_at": "2025-02-16 23:56:31",
+            "updated_at": "2025-02-16 23:56:31"
         }
     ],
     "reservations": [
@@ -1520,7 +1714,7 @@
             "total_price": 600,
             "status": "Cancelled",
             "created_at": "2025-02-16 21:27:36",
-            "updated_at": "2025-02-16 22:53:44"
+            "updated_at": "2025-02-16 23:56:31"
         },
         {
             "hotel_id": "10",
@@ -1851,6 +2045,50 @@
             "status": "Confirmed",
             "created_at": "2025-02-16 22:53:44",
             "updated_at": "2025-02-16 22:53:44"
+        },
+        {
+            "hotel_id": "10",
+            "customer_id": "20",
+            "num_people": 1,
+            "check_in": "2025-04-01",
+            "check_out": "2025-04-03",
+            "total_price": 300,
+            "status": "Confirmed",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "hotel_id": "10",
+            "customer_id": "20",
+            "num_people": 2,
+            "check_in": "2025-03-01",
+            "check_out": "2025-03-05",
+            "total_price": 600,
+            "status": "Confirmed",
+            "created_at": "2025-02-16 23:44:56",
+            "updated_at": "2025-02-16 23:44:56"
+        },
+        {
+            "hotel_id": "10",
+            "customer_id": "20",
+            "num_people": 1,
+            "check_in": "2025-04-01",
+            "check_out": "2025-04-03",
+            "total_price": 300,
+            "status": "Confirmed",
+            "created_at": "2025-02-16 23:56:31",
+            "updated_at": "2025-02-16 23:56:31"
+        },
+        {
+            "hotel_id": "10",
+            "customer_id": "20",
+            "num_people": 2,
+            "check_in": "2025-03-01",
+            "check_out": "2025-03-05",
+            "total_price": 600,
+            "status": "Confirmed",
+            "created_at": "2025-02-16 23:56:31",
+            "updated_at": "2025-02-16 23:56:31"
         }
     ]
 }
